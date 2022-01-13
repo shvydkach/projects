@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="Опис сторінки">
+     <title> Сфокусований Швидкочитач </title>
+     <link rel="shortcut icon" href="./favicon.ico">
+     <link rel="stylesheet" href="./focused.css">
+    </head>
+    <body>
+
+      <div class="output">
+        <p class="output-text">
+          <span class="word">
+            <span class="focused">
+          <span class="letter letter1">Швид</span>
+          к
+          <span class="letter letter2">очитач</span>
+        </span>
+      </span>
+    </p>
+  </div>
+
+  <div class="input">
+    <button class="btn start">Розпочати</button>
+
+    <div class="speed-container">
+      <p class="speed-info">
+        Швидкість (слів за хвилину): <br>
+        Типово: 270
+      </p>
+      <div class="speed">
+        <span class="btn minus">-</span>
+        <input type="number" class="btn wpm input-btn" value="270" placeholder="270" min="100" max="700" step="10">
+        <span class="btn plus">+</span>
+      </div>
+    </div>
+    
+    <div class="fontsize-container">
+      <p class="fontsize-info">
+        Розмір шрифту (пікселі): <br>
+        Типово: 30
+      </p>
+      <div class="fontsize">
+        <span class="btn fontsize-minus">-</span>
+        <input type="number" class="btn fontsize-btn input-btn" value="30" placeholder="30" min="15" max="50" step="1">
+        <span class="btn fontsize-plus">+</span>
+      </div>
+    </div>
+    
+    
+    <div class="text-input">
+      <textarea class="textarea-input" placeholder="Текст"></textarea>
+    </div>
+  </div>
+  
+  <script src="./focused.js" ></script>
+  <script>
+    const appHeight = () => {
+      const doc = document.documentElement
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+    }
+    window.addEventListener('resize', appHeight)
+    appHeight()
+  </script>
+</body>
+</html>

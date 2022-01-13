@@ -1,0 +1,251 @@
+:root {
+  --focus: #000000;
+  --app-height: 100%;
+  --fontsize: 30px;
+
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1rem;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-rows: minmax(auto, 100vh) minmax(auto, auto);
+  grid-gap: 10px;
+  justify-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  height: fit-content;
+}
+
+.output {
+  width: 95vw;
+  height: 100vh;
+  height: var(--app-height);
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.output-text {
+  font-size: 20px;
+  width: 100%;
+  min-height: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Стилі для фокусування */
+.word {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.focused {
+  display: inline-block;
+  position: relative;
+  left: 45%; /* Зміна відступу тут*/
+  width: auto;
+  font-size: var(--fontsize);
+  color: var(--focus);
+}
+
+.letter {
+  display: inline-block;
+  position: absolute;
+  color: black;
+}
+
+.letter1 {
+  padding-right: 1px;
+  transform: translate(-100%, 0%);
+}
+
+.letter2 {
+  padding-left: 1px;
+}
+
+.err {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  padding: 3px;
+}
+
+
+/* Інші стилі */
+.input {
+  width: 100%;
+  min-height: 300px;
+  height: calc(var(--app-height) + 300px);
+  margin-top: 50px;
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  min-height: 50px;
+  min-width: 50px;
+  box-shadow: 5px 5px 0px #dbdbdb;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: black;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 0px #dbdbdb;
+}
+
+.start {
+  box-shadow: 5px 5px 0px #a5ce99;
+  background-color: #c5f7b6;
+  width: 150px;
+}
+
+.start:hover,
+.start:active {
+  background-color: #c5f7b6;
+  box-shadow: 0px 0px 0px #a5ce99;
+}
+
+.speed-container {
+  margin-top: 50px;
+  min-width: 250px;
+}
+
+.speed {
+  width: 225px;
+  height: 75px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.fontsize-container {
+  margin-top: 25px;
+  min-width: 250px;
+}
+
+.fontsize {
+  width: 225px;
+  height: 75px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.input-btn {
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+
+.input-btn:focus {
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 0px #dbdbdb;
+}
+
+
+/* Приховування бокових стрілочок для: 
+Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Приховування бокових стрілочок для: 
+Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+textarea { 
+  height: 450px;
+  max-height: 450px;
+  width: 90%;
+  max-width: 500px ;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px #dbdbdb;
+  background-color: #fafafa;
+  resize: none;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.1s ease-in-out;
+}
+
+textarea:focus {
+  box-shadow: none;
+}
+
+.text-input {
+  margin-top: 25px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.text-input .textarea-input {
+  max-width: 750px;
+  margin: 15px auto;
+}
+
+.transliteration {
+  padding: 5px;
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.transliteration .textarea-transliteration {
+  margin: 15px auto;
+  font-size: 0.7rem;
+  box-shadow: none;
+  min-height: 350px;
+}
+
+
+
